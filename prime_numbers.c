@@ -7,12 +7,13 @@ int main(){
     for(int i=a;i<=b;i++){
         limit = (int) sqrt(i);
         for(int j=2;j<=limit;j++){
-            printf("%d %d %d\n",i,j,i%j);
+            //printf("%d %d %d\n",i,j,i%j);
             if(i%j==0){
                 bet=1;
                 break;
             } 
         }
-        if(bet==0) printf("%d\n",i);
+        if(bet==0 && i!=1) printf("%d\n",i);
+        bet =0;
     }
 }
