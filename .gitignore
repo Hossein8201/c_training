@@ -1,3 +1,6 @@
 *.c
+!binary.c
+!kase_va_nokhod.c
+!zini.c
 *.exe
 .vscode
