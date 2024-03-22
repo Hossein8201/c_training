@@ -1,6 +1,3 @@
-*.c
-!binary.c
-!kase_va_nokhod.c
-!cyrcle_city.c
 *.exe
 .vscode
+circle_city.c
