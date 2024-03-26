@@ -17,8 +17,8 @@ int main(){
 
         for(int j=0;j<t;j++){   for(int k=0;k<t;k++){   
             if(chart[j][k]=='1' && bet==0){
-                if(chart[j][k+1]=='1' && chart[j+1][k]=='1' && chart[j+1][k+1]=='1')    strcat(answer[i],"yes");
-                else    strcat(answer[i],"no");
+                if(chart[j][k+1]=='1' && chart[j+1][k]=='1' && chart[j+1][k+1]=='1')    strcat(answer[i],"SQUARE");
+                else    strcat(answer[i],"TRIANGLE");
                 bet=1;
             }
         }}
