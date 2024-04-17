@@ -1,8 +1,2 @@
 *.exe
 .vscode
-base.c
-c_tasks_workshop.c
-landa.c
-painting.c
-sigmagir.c
-square.c
