@@ -1,8 +1,12 @@
 #include <stdio.h>
 
 int main(){
-    int n,transform[10000][2];
+    int n,kase1,kase2,start=1;
     scanf("%d",&n);
-    for (int i=0;i<n;i++)  scanf("%d %d",&transform[i][1],&transform[i][2]);
-    printf("%d",transform[n-1][2]);
+    for(int i=0;i<n;i++){
+        scanf("%d %d",&kase1,&kase2);
+        if(kase1==start)     start=kase2;
+        else if(kase2==start)      start=kase1;
+    }
+    printf("%d",start);
 }
