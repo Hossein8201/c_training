@@ -1,8 +1,9 @@
+// https://quera.org/problemset/220672
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int index=0;
+int ind;
 int movie_id;
 
 
