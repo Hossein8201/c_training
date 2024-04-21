@@ -1,8 +1,2 @@
 *.exe
 .vscode
-alpha_base.c
-border_towns.c
-cartesian_table.c
-ICPC.c
-snake_bend.c
-three_dishes.c
