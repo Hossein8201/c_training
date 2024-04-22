@@ -1,2 +1,4 @@
 *.exe
 .vscode
+coins_and_weights.c
+general_tanks.c
