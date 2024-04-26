@@ -1,2 +1,9 @@
 *.exe
 .vscode
+pattern.c
+rock_paper_scissor.c
+stars.c
+subscription.c
+success_train.c
+two_list.c
+
