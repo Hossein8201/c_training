@@ -1,16 +1,21 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(){
-    int t;
-    long int n,list[1000];
-    float a;
-    scanf("%d",&t);
-    for(int i=0;i<t;i++){
-        scanf("%ld",&n);
-        scanf("%f",&a);
-        long int sum=0;
-        for(float j=0;j<n;j++)    sum+= (long int) (a+j/n);
-        list[i]=sum;
+    int turn;
+    long int list[1000];
+    double number,begin,list_question[1000][2];
+    scanf("%d",&turn);
+    for(int i=0;i<turn;i++){    scanf("%lf",&list_question[i][0]);     scanf("%lf",&list_question[i][1]);}
+    for(int i=0;i<turn;i++){
+        number=list_question[i][0];     begin=list_question[i][1];
+        double sum = floor(begin)*number;
+        begin -= ceil(begin);       begin *= -1;
+        double j = (number*begin);      double j_=j;
+        double k=0;
+        for(int l=1;l*j<=number-1;l++){     if(j_<=l*j)   k++;    j_++;   sum+=k;}    
+        //printf("%lf\n",sum);
+        list[i] = (long int) sum;
     }
-    for(int i=0;i<t;i++)    printf("%ld\n",list[i]);
+    for(int i=0;i<turn;i++)    printf("%ld\n",list[i]);
 }
