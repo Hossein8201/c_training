@@ -1,11 +1,3 @@
 *.exe
 .vscode
-all_subcategories.c
-infinite_sequence.c
-math_challenge.c
-quarter_elephant.c
-service_area.c
-sixteen_base.c
-volleyball_winner.c
-
 
