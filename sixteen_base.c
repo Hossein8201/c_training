@@ -14,7 +14,7 @@ void sixteen_base(int index,int carry){
         if(carry==1){
             finished_string[i]= (char) ((int) primite_string[i] +1);
             if(finished_string[i]=='G'){    finished_string[i]='0';     carry=1;}
-            else    carry=0;
+            else{   if(finished_string[i]==':')  finished_string[i]='A';     carry=0;}
         }
         else    finished_string[i]=primite_string[i];    
     }
