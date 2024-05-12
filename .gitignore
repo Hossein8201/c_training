@@ -1,15 +1,2 @@
 *.exe
 .vscode
-Ccafe_question.c
-Dynamic_programming.c
-Eckerman_function.c
-braket_sum.c
-dynamic.c
-fibonacci.c
-fibonacci_memoization.c
-maximum_character.c
-point_and_condition.c
-rock_paper_scissor.c
-seven_stones.c
-subscription.c
-superPrime.c
