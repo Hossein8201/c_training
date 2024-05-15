@@ -1,24 +1,21 @@
+// https://quera.org/problemset/234251?tab=description
 #include <stdio.h>
-#include <math.h>
-
 
 int main(){
-    int list_answer[1000000000];
-    long long int list_question[10000000];
-    long long int questions,number,max;
-    scanf("%lld %lld",& questions, & number);
-    for(long int i=0;i<questions;i++){    scanf("%lld",&list_question[i]);  max=fmax(list_question[i-1],list_question[i]);}
-    for(long long int j=0;j<max;j++){
-        if(j==0 || (j)%(number+1)==0){     list_answer[j]=1;     }
-        else if(j==1 || list_answer[j-1]==4 || (list_answer[j-1]==1 && list_answer[j-2]==4)){     list_answer[j]=2;}
-        else if(j==2 || list_answer[j-1]==2 || (list_answer[j-1]==1 && list_answer[j-2]==2)){     list_answer[j]=3;}
-        else{    list_answer[j]=4;}
+    int number,turn,answer_list[200000];
+    long long int question;
+    scanf("%d %d",&number,&turn);
+    for(int i=0;i<number;i++){   
+        scanf("%lld",&question);
+        if((question-1)%(turn+1) == 0)      answer_list[i]=1;
+        else if(((question-1)-((question-1)/(turn+1)))%3 == 1)      answer_list[i]=2;
+        else if(((question-1)-((question-1)/(turn+1)))%3 == 2)      answer_list[i]=3;
+        else    answer_list[i]=4;
     }
-    for(long long int i=0;i<questions;i++){
-        if(list_answer[list_question[i]-1]==1)   printf("Peygir");
-        else if(list_answer[list_question[i]-1]==2)   printf("Tannaz");
-        else if(list_answer[list_question[i]-1]==3)   printf("Jeddy");
-        else    printf("Morshed");
-        printf("\n");
+    for(int i=0;i<number;i++){
+        if(answer_list[i]==1)       printf("Peygir\n");
+        else if(answer_list[i]==2)      printf("Tannaz\n");
+        else if(answer_list[i]==3)      printf("Jeddy\n");
+        else    printf("Morshed\n");
     }
 }
