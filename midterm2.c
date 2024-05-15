@@ -11,7 +11,6 @@ int beautiful(int number){
         }
         return 1;
     }
-
 }
 
 int main(){
