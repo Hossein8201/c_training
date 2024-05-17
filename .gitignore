@@ -1,2 +1,6 @@
 *.exe
 .vscode
+silence.c
+swiftness.c
+clearing.c
+test2.c
