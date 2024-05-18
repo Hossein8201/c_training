@@ -5,7 +5,7 @@
 // global variable
 int n,m,p,q;
 
-void print_matrix(int matrix[n][q]){
+void print_matrix(int matrix[n][q]){    // this function print your matrix:
     for(int i=0;i<n;i++){    for(int j=0;j<q;j++)    printf("%d ",matrix[i][j]);     printf("\n");}
 }
 
@@ -23,10 +23,6 @@ int matrix_multiple_nonrecursive(int matrix1[n][m],int matrix2[p][q]){
     print_matrix(matrix_answer);    // <- call the function to print the answer
 }
 
-int matrix_multiple_recursive(){
-    ;
-}
-
 int main(){
     // give your defult matrixs: 
     // first matrix:
@@ -39,7 +35,6 @@ int main(){
     printf("Enter your second matrix:\n");       int matrix2[p][q];
     for(int i=0;i<p;i++)    for(int j=0;j<q;j++)    scanf("%d",&matrix2[i][j]);
     printf("\n");
-    // call your functions to calculate the answer: ->
+    // call your function to calculate the answer: ->
     matrix_multiple_nonrecursive(matrix1,matrix2);
-    matrix_multiple_recursive();
 }
