@@ -75,7 +75,7 @@ void show(){
 
 void add(){
     // if(contacts == NULL)    contacts = (list_contacts *) malloc(sizeof(list_contacts));
-    // else   contacts = (list_contacts *) realloc(contacts,+1*sizeof(list_contacts));
+    // else   contacts = (list_contacts *) realloc(contacts,1*sizeof(list_contacts));
     printf("--->Enter information of your new person :\n");
     printf("first name:  ");    gets(contacts[member].first_name);
     printf("last name:  ");     gets(contacts[member].last_name);
