@@ -4,3 +4,9 @@ silence.c
 swiftness.c
 clearing.c
 test2.c
+concatination.c
+factorial.c
+find_and_replace.c
+matrix_multiplication.c
+othello_question.c
+swap_pointer.c

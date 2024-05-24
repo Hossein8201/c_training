@@ -1,3 +1,4 @@
+#include "request_function_contacts.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,61 +7,12 @@ typedef struct{
     char first_name[1000],last_name[1000],phone_number[1000];
     int age;
     int valid;
-} list_contacts;
+} contact_structure;
 
-list_contacts contacts[10000];
+contact_structure contacts[10000];
 int member=0;
 char type_sort[100] = "adding_time";
 FILE *file_open;
-
-void show_member(int);
-void show();
-void add();
-int list_sort(const void *,const void *);    
-void delete_member(int);
-void update(int); 
-void search();
-void sort();
-void save_exit();    
-
-int main(){
-    printf("--->Welcome to contacts application. this program save and edit your personal contacts informations.\n");
-
-    file_open = fopen("C:\\Users\\adibianstore\\OneDrive\\Desktop\\personal_contacts.txt", "r");
-    if(file_open != NULL){
-        fseek(file_open,0,SEEK_SET);
-        fscanf(file_open,"your personal contacts informations sorted by %s :\n",type_sort);
-        while(fscanf(file_open,"contact %d -->\t") == 1){
-            // if(contacts == NULL)    contacts = (list_contacts *) malloc(1*sizeof(list_contacts));
-            // else    contacts = (list_contacts *) realloc(contacts,1*sizeof(list_contacts));
-            fscanf(file_open,"%s %s",contacts[member].first_name,contacts[member].last_name);
-            while(fscanf(file_open," "))    ;
-            fscanf(file_open,": %d years old : %s\n",&contacts[member].age,contacts[member].phone_number);
-            contacts[member].valid = 1;
-            member++;
-        }
-        printf("--->the File \'personal_contacts.txt\' was successfully added.\n");
-    }
-    else{   printf("--->the File \'personal_contacts.txt\' was successfully created.\n");}  
-
-    while(1){
-        printf("\nchoose your request:\n");
-        printf("1--) show information of a person.\n");
-        printf("2--) add a person.\n");
-        printf("3--) delete or update or search a person.\n");
-        printf("4--) sort the informations.\n");
-        printf("5--) save and exit.\n");
-        int order;    scanf("%d",&order);   getchar();
-        switch(order){
-            case 1:     show();     break;
-            case 2:     add();      break;
-            case 3:     search();      break;
-            case 4:     sort();     break;  
-            case 5:     save_exit();      break;
-            default:    printf("--->your choose isn't correct. please choose carefully! \n");
-        }
-    }
-}
 
 void show_member(int i){
     printf("\tthe member of number \'%d\' = { ",i+1);
@@ -74,8 +26,8 @@ void show(){
 }
 
 void add(){
-    // if(contacts == NULL)    contacts = (list_contacts *) malloc(sizeof(list_contacts));
-    // else   contacts = (list_contacts *) realloc(contacts,1*sizeof(list_contacts));
+    // if(contacts == NULL)    contacts = (contact_structure *) malloc(sizeof(contact_structure));
+    // else   contacts = (contact_structure *) realloc(contacts,1*sizeof(contact_structure));
     printf("--->Enter information of your new person :\n");
     printf("first name:  ");    gets(contacts[member].first_name);
     printf("last name:  ");     gets(contacts[member].last_name);
@@ -83,7 +35,7 @@ void add(){
     printf("age:  ");     scanf("%d",&contacts[member].age);    getchar();
     contacts[member].valid = 1;
     member++;
-    if(strcmp(type_sort,"adding_time") != 0)    qsort(contacts,member,sizeof(list_contacts),list_sort);
+    if(strcmp(type_sort,"adding_time") != 0)    qsort(contacts,member,sizeof(contact_structure),list_sort);
     printf("--->adding process was successful. \n");
 }
 
@@ -122,7 +74,7 @@ void delete_member(int member_number){
     printf("\n--->do you really want to delete that ?     1--) Yes     2--) No\nyour answer:  ");    
     int answer;    scanf("%d",&answer);      getchar();
     if(answer == 1){    contacts[member_number].valid = 0;   
-        qsort(contacts,member,sizeof(list_contacts),list_sort);   
+        qsort(contacts,member,sizeof(contact_structure),list_sort);   
         printf("--->the deletion process was successful\n");
     }
     else    printf("--->the deletion process was canceled\n");
@@ -155,7 +107,7 @@ void update(int member_number){
             show_member(member_number);     printf("--->editing was successful.\n"); 
         } 
     }
-    if(strcmp(type_sort,"adding_time") != 0)    qsort(contacts,member,sizeof(list_contacts),list_sort);
+    if(strcmp(type_sort,"adding_time") != 0)    qsort(contacts,member,sizeof(contact_structure),list_sort);
     printf("\n--->updating was successful.\n");  
 }
 
@@ -165,12 +117,12 @@ void sort(){
     if(sorting_type == 1)      strcpy(type_sort,"first_name");
     else if(sorting_type == 2)      strcpy(type_sort,"last_name");
     else if(sorting_type == 3)      strcpy(type_sort,"age");    
-    qsort(contacts,member,sizeof(list_contacts),list_sort);      show();
+    qsort(contacts,member,sizeof(contact_structure),list_sort);      show();
 }
 
 int list_sort(const void *list1,const void *list2){
-    list_contacts *li1 = ((list_contacts *) list1);
-    list_contacts *li2 = ((list_contacts *) list2);
+    contact_structure *li1 = ((contact_structure *) list1);
+    contact_structure *li2 = ((contact_structure *) list2);
     int bet1 = li1->valid;
     int bet2 = li2->valid;
     if(bet1 == 1 && bet2 == 1){
@@ -212,8 +164,6 @@ void save_exit(){
         printf("--->your changes successfully saved in your File.\n");
         // free(contacts);
         fclose(file_open);
-        exit(0);
     }
     printf("--->the saving process was canceled.\n");
 }
-
