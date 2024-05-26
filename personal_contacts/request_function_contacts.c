@@ -3,16 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct{
-    char first_name[1000],last_name[1000],phone_number[1000];
-    int age;
-    int valid;
-} contact_structure;
-
 contact_structure contacts[10000];
 int member=0;
 char type_sort[100] = "adding_time";
-FILE *file_open;
+FILE *file_open;  
 
 void show_member(int i){
     printf("\tthe member of number \'%d\' = { ",i+1);

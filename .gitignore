@@ -1,2 +1,6 @@
 *.exe
 .vscode
+cryptography.c
+sum_with_pointer.c
+variable_address.c
+

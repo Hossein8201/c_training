@@ -9,10 +9,10 @@ typedef struct{
     int valid;
 } contact_structure;
 
-contact_structure contacts[10000];
-int member=0;
-char type_sort[100] = "adding_time";
-FILE *file_open;   
+extern contact_structure contacts[10000];
+extern int member=0;
+extern char type_sort[100] = "adding_time";
+extern FILE *file_open;   
 
 int main(){
     printf("--->Welcome to contacts application. this program save and edit your personal contacts informations.\n");

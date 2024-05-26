@@ -1,6 +1,3 @@
-#ifndef REQUEST_FUNCTION_CONTACTS
-#define REQUEST_FUNCTION_CONTACTS
-
 void show_member(int);
 void show();
 void add();
@@ -11,4 +8,3 @@ void search();
 void sort();
 void save_exit(); 
 
-#endif
